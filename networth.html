@@ -10,13 +10,13 @@ ${demo.css}
 		</style>
 		<script type="text/javascript">
 $(function () {
-    $('#container').highcharts({
+    $('#container2015').highcharts({
         title: {
-            text: 'Monthly Average Temperature',
+            text: '2015年净值曲线',
             x: -20 //center
         },
         subtitle: {
-            text: 'Source: WorldClimate.com',
+            text: 'by: 邓畅霖',
             x: -20
         },
         xAxis: {
@@ -51,16 +51,14 @@ $(function () {
         }]
     });
 });
-		</script>
-		<script type="text/javascript">
 $(function () {
-    $('#container').highcharts({
+    $('#container2016').highcharts({
         title: {
-            text: 'Monthly Average Temperature',
+            text: '2016年净值曲线',
             x: -20 //center
         },
         subtitle: {
-            text: 'Source: WorldClimate.com',
+            text: 'by: 邓畅霖',
             x: -20
         },
         xAxis: {
@@ -96,12 +94,14 @@ $(function () {
     });
 });
 		</script>
+		
 	</head>
 	<body>
 <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
 <script src="http://cdn.hcharts.cn/highcharts/modules/exporting.js"></script>
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="container2015" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="container2016" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 	</body>
 </html>
