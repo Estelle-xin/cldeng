@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Highcharts Example</title>
+		<title>净值曲线</title>
 
 		<script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
 		<style type="text/css">
@@ -25,7 +25,7 @@ $(function () {
         },
         yAxis: {
             title: {
-                text: 'Temperature (°C)'
+                text: '净值（归一化）'
             },
             plotLines: [{
                 value: 0,
@@ -34,7 +34,7 @@ $(function () {
             }]
         },
         tooltip: {
-            valueSuffix: '°C'
+            valueSuffix: ''
         },
         legend: {
             layout: 'vertical',
@@ -47,7 +47,51 @@ $(function () {
             data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
         }, {
             name: '沪深300',
-            data: [-20, 80, 57, 113, 170, 220, 248, 241, 201, 141, 86, 25]
+            data: [ 1.000, 1.072, 1.048, 1.133, 170, 220, 248, 241, 201, 141, 86, 25]
+        }]
+    });
+});
+		</script>
+		<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        title: {
+            text: 'Monthly Average Temperature',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: WorldClimate.com',
+            x: -20
+        },
+        xAxis: {
+            categories: ['5.15', '5.22', '5.29', '6.5', '6.12', '6.19','6.26', '7.3', '7.10', '7.17', '7.24', '7.31',
+                '8.7', '8.14', '8.21', '8.28', '9.2', '9.9','9.18', '9.25']
+        },
+        yAxis: {
+            title: {
+                text: '净值（归一化）'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: '净值',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        }, {
+            name: '沪深300',
+            data: [ 1.000, 1.072, 1.048, 1.133, 170, 220, 248, 241, 201, 141, 86, 25]
         }]
     });
 });
